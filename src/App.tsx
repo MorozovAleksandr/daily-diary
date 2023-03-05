@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+
 import Button from './components/primitives/Button';
 
 const App: React.FC = () => {
