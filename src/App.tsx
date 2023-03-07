@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Button from './components/primitives/Button';
+import Header from './components/Header';
 
 const App: React.FC = () => {
   return (
     <div className='App'>
-      <Button text={'test01'} />
+      <Header />
     </div>
   );
 };
