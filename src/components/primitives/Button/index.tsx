@@ -1,11 +1,18 @@
 import React from 'react';
 
+import './styles.sccs';
+
 interface ButtonProps {
-  text: string;
+  text: string | number;
+  onClick: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ text }) => {
-  return <div>{text}</div>;
+const Button: React.FC<ButtonProps> = ({ text, onClick }) => {
+  return (
+    <button className={'Button'} onClick={onClick}>
+      {text}
+    </button>
+  );
 };
 
 export default Button;
