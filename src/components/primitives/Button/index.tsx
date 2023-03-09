@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import './styles.sccs';
 
@@ -7,7 +7,7 @@ interface ButtonProps {
   onClick: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ text, onClick }) => {
+const Button: FC<ButtonProps> = ({ text, onClick }) => {
   return (
     <button className={'Button'} onClick={onClick}>
       {text}

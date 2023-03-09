@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, { FC } from 'react';
 
 import { inputEvent } from '../../../types';
 
@@ -10,7 +10,7 @@ interface InputProps {
   disabled?: boolean;
 }
 
-const Input: React.FC<InputProps> = ({ value, onChange, className, disabled = false }) => {
+const Input: FC<InputProps> = ({ value, onChange, className, disabled = false }) => {
   const onChangeHandle = (e: inputEvent): void => {
     onChange(e);
   };
@@ -21,6 +21,7 @@ const Input: React.FC<InputProps> = ({ value, onChange, className, disabled = fa
       onChange={onChangeHandle}
       value={value}
       disabled={disabled}
+      type='button'
     />
   );
 };
