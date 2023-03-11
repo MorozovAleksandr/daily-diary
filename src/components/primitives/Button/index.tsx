@@ -1,15 +1,17 @@
+import classNames from 'classnames';
 import React, { FC } from 'react';
 
-import './styles.sccs';
+import './styles.scss';
 
 interface ButtonProps {
   text: string | number;
   onClick: () => void;
+  className?: string;
 }
 
-const Button: FC<ButtonProps> = ({ text, onClick }) => {
+const Button: FC<ButtonProps> = ({ text, onClick, className }) => {
   return (
-    <button className={'Button'} onClick={onClick}>
+    <button className={classNames('Button', className && className)} onClick={onClick}>
       {text}
     </button>
   );
