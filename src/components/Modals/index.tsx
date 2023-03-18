@@ -1,13 +1,15 @@
 import Dialog from '@mui/material/Dialog';
 import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
-import React, { FC, useState, useEffect } from 'react';
-
+import React, { FC, useState, useEffect, useMemo, ReactElement } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+
+import { DIARY_NOTE } from '../../constats';
 
 import { removeModal } from '../../redux/sliceModules/modal';
 
 import { selectModal } from '../../redux/sliceModules/modal/selectors';
+import DiaryNote from '../DiaryNote';
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -34,6 +36,19 @@ const Modal: FC = () => {
     dispatch(removeModal());
   };
 
+  const getModal = useMemo((): ReactElement | null => {
+    if (modal) {
+      const { component, data } = modal;
+      switch (component) {
+        case DIARY_NOTE: {
+          return <DiaryNote {...data} />;
+        }
+      }
+    }
+
+    return null;
+  }, [modal]);
+
   return (
     <Dialog
       open={open}
@@ -42,7 +57,7 @@ const Modal: FC = () => {
       onClose={handleCloseModal}
       aria-describedby='alert-dialog-slide-description'
     >
-      123
+      {getModal}
     </Dialog>
   );
 };

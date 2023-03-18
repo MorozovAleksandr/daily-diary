@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import './styles.scss';
 
-interface DiaryNoteProps {
+export interface DiaryNoteProps {
   date: string;
   title: string;
   text: string;
@@ -11,9 +11,9 @@ interface DiaryNoteProps {
 const DiaryNote: FC<DiaryNoteProps> = ({ date, title, text }) => {
   return (
     <div className={'DiaryNote'}>
-      <div>{title}</div>
-      <div>{date}</div>
-      <div>{text}</div>
+      <div className={'DiaryNote__title'}>{title}</div>
+      <div className={'DiaryNote__date'}>{date}</div>
+      <div className={'DiaryNote__text'}>{text}</div>
     </div>
   );
 };
