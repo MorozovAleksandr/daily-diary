@@ -3,8 +3,13 @@
   align-items: center;
   justify-content: flex-end;
 
-  height: 50px;
+  height: 80px;
   padding: 5px 15px;
 
-  background-color: var(--color-graphite-black);
+  background-color: var(--color-dark-blue);
+}
+
+.Header__buttons {
+  display: flex;
+  gap: 15px;
 }

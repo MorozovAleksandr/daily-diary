@@ -4,7 +4,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 
 export interface Modal {
   component: string;
-  data: any;
+  modalProps: any;
 }
 
 export type ModalState = Modal | null;

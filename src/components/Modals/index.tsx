@@ -1,7 +1,7 @@
 import Dialog from '@mui/material/Dialog';
 import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
-import React, { FC, useState, useEffect } from 'react';
+import React, { FC, useState, useEffect, useMemo } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -21,6 +21,7 @@ const Transition = React.forwardRef(function Transition(
 const Modal: FC = () => {
   const modal = useSelector(selectModal);
   const dispatch = useDispatch();
+
   const [open, setOpen] = useState<boolean>(false);
 
   useEffect(() => {
@@ -33,6 +34,14 @@ const Modal: FC = () => {
     setOpen(false);
     dispatch(removeModal());
   };
+
+  /* const getModal = useMemo(() => {
+    if(modal) {
+      switch (modal.component) {
+        case 
+      }
+    }
+  }, [modal]) */
 
   return (
     <Dialog
