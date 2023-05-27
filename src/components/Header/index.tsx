@@ -14,7 +14,7 @@ const Header: FC = () => {
     dispatch(
       setModal({
         component: DIARY_NOTE,
-        data: { date: '12.12.12', title: 'Создать запись', text: '' },
+        modalProps: { date: '12.12.12', title: 'Создать запись', text: '' },
       }),
     );
 
@@ -23,10 +23,10 @@ const Header: FC = () => {
   return (
     <div className={'Header'}>
       <div className='Header__buttons'>
-        <Button variant='contained' onClick={hanldeCreateNote}>
+        <Button variant='contained' className='Header__button' onClick={hanldeCreateNote}>
           Создать
         </Button>
-        <Button variant='contained' onClick={handleDeleteNote}>
+        <Button variant='contained' className='Header__button' onClick={handleDeleteNote}>
           Удалить
         </Button>
       </div>

@@ -6,10 +6,15 @@
   height: 80px;
   padding: 5px 15px;
 
-  background-color: var(--color-dark-blue);
-}
+  background-color: var(--color-blue2);
 
-.Header__buttons {
-  display: flex;
-  gap: 15px;
+  &__buttons {
+    display: flex;
+    gap: 15px;
+  }
+
+  &__button {
+    color: black !important;
+    background-color: white !important;
+  }
 }
