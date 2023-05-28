@@ -1,1 +1,1 @@
-export const DIARY_NOTE = 'DiaryNote';
+export const CREATE_DIARY_NOTE = 'CreateDiaryNote';

@@ -2,7 +2,7 @@ import Button from '@mui/material/Button';
 import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { DIARY_NOTE } from '../../constats';
+import { CREATE_DIARY_NOTE } from '../../constats';
 
 import { removeModal, setModal } from '../../redux/sliceModules/modal';
 
@@ -13,8 +13,8 @@ const Header: FC = () => {
   const hanldeCreateNote = () =>
     dispatch(
       setModal({
-        component: DIARY_NOTE,
-        modalProps: { date: '12.12.12', title: 'Создать запись', text: '' },
+        component: CREATE_DIARY_NOTE,
+        modalProps: null,
       }),
     );
 

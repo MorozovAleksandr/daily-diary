@@ -4,12 +4,12 @@ import { TransitionProps } from '@mui/material/transitions';
 import React, { FC, useState, useEffect, useMemo, ReactElement } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { DIARY_NOTE } from '../../constats';
+import { CREATE_DIARY_NOTE } from '../../constats';
 
 import { removeModal } from '../../redux/sliceModules/modal';
 
 import { selectModal } from '../../redux/sliceModules/modal/selectors';
-import DiaryNote from '../DiaryNote';
+import CreateDiaryNote from '../CreateDiaryNote';
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -41,8 +41,8 @@ const Modal: FC = () => {
     if (modal) {
       const { component, modalProps } = modal;
       switch (component) {
-        case DIARY_NOTE: {
-          return <DiaryNote {...modalProps} />;
+        case CREATE_DIARY_NOTE: {
+          return <CreateDiaryNote {...modalProps} />;
         }
       }
     }
